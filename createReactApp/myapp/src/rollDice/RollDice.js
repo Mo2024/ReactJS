@@ -3,40 +3,32 @@ import Die from "./Die"
 import './rolldice.css'
 class RollDice extends Component {
     state = {
-        1: "one",
-        2: "two",
-        3: "three",
-        4: "four",
-        5: "five",
-        6: "six"
+        die1: "one",
+        die2: "one",
+        rolling: false
     };
     makeTimer = e => {
-        const number = {
-            1: "one",
-            2: "two",
-            3: "three",
-            4: "four",
-            5: "five",
-            6: "six"
-        }
-        setInterval(() => {
-            let rand = Math.floor(Math.random() * 6) + 1;
-            this.setState({ num: rand });
+        const number = ["one", "two", "three", "four", "five", "six"]
+        this.setState({ rolling: true })
+        document.getElementById("die-div").classList.add("roll")
+        setTimeout(() => {
+            this.setState({ die1: number[Math.floor(Math.random() * 6)], die2: number[Math.floor(Math.random() * 6)], rolling: false });
+            document.getElementById("die-div").classList.remove("roll")
+
         }, 1000);
     }
     render() {
         return (
             <div>
                 <div id="die-div">
-                    <Die />
-                    <Die />
+                    <Die num={this.state.die1} />
+                    <Die num={this.state.die2} />
                 </div>
-                <button>Roll Dice!</button>
+                <button id='roll-btn' onClick={this.makeTimer}>{this.state.rolling ? "Rolling..." : "Roll Dice!"}</button>
             </div>
         );
     }
 
 }
-
 
 export default RollDice;
