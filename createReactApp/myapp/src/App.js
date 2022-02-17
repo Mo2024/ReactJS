@@ -1,10 +1,10 @@
-import RollDice from './rollDice/RollDice';
+import Lotter from './sec8/Lotter';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <RollDice />
+      <Lotter />
     </div>
   );
 }
