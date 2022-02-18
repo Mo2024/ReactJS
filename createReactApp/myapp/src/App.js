@@ -1,10 +1,10 @@
-import Lotter from './sec8/Lotter';
 import './App.css';
+import CoinFlip from './stateActivities/CoinFlip';
 
 function App() {
   return (
     <div className="App">
-      <Lotter />
+      <CoinFlip />
     </div>
   );
 }
