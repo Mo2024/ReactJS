@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './coin.css'
+import heads from './react-coin-heads-jpg.jpg'
+import tails from './react-coin-tails-jpg.jpg'
 
 class Coin extends Component {
-    static defaultProps = {
-        heads: 'react-coin-heads-jpg',
-        tails: 'react-coin-tails-jpg'
-    }
     render() {
         return (
             <div>
-                <img src={'https://tinyurl.com/react-coin-heads-jpg'} />
+                {/* {this.props.side ? : ''} */}
+                <img crossOrigin='anonymous' src={this.props.side} />
             </div>
         );
     }
