@@ -1,10 +1,10 @@
 import './App.css';
-import CoinFlip from './stateActivities/CoinFlip';
+import ColorBox from './ColorBoxes/ColorBox';
 
 function App() {
   return (
     <div className="App">
-      <CoinFlip />
+      <ColorBox />
     </div>
   );
 }
