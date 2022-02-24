@@ -1,10 +1,10 @@
 import './App.css';
-import Timer from './sec15/Timer';
+import Deck from './CardsDeck/Deck'
 
 function App() {
   return (
     <div className="App">
-      <Timer />
+      <Deck />
     </div>
   );
 }
