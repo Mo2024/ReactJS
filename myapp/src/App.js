@@ -1,5 +1,5 @@
 import './App.css';
-import Deck from './CardsDeck/Deck'
+import JokeList from './dadJokes/JokeList'
 
 function App() {
   return (
