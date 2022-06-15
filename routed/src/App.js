@@ -7,6 +7,7 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import Food from './patterns/Food'
 import Meal from './patterns/Meal'
 import Error from './patterns/Error';
+import FoodSearch from './patterns/FoodSearch';
 
 /* Section 20 Intro to routers */
 // function App() {
@@ -39,7 +40,7 @@ function App() {
       </nav> */}
 
       <Routes>
-        <Route exact path="/" element={<h1>Main page</h1>} />
+        <Route exact path="/" element={<FoodSearch />} />
         <Route exact path="/food/:name" element={<Food />} />
         <Route exact path="/meal/:foodName/drink/:drinkName" element={<Meal />} />
 
