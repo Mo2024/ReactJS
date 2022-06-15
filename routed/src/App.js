@@ -5,6 +5,8 @@ import Contact from './Contact'
 import About from './About'
 import { Routes, Route, NavLink } from 'react-router-dom';
 import Food from './patterns/Food'
+import Meal from './patterns/Meal'
+import Error from './patterns/Error';
 
 /* Section 20 Intro to routers */
 // function App() {
@@ -37,7 +39,12 @@ function App() {
       </nav> */}
 
       <Routes>
+        <Route exact path="/" element={<h1>Main page</h1>} />
         <Route exact path="/food/:name" element={<Food />} />
+        <Route exact path="/meal/:foodName/drink/:drinkName" element={<Meal />} />
+
+        {/* Put error route in the end */}
+        <Route exact path='*' element={<Error />} />
       </Routes>
 
     </div>
