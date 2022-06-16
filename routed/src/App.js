@@ -3,7 +3,7 @@ import './App.css';
 import Dog from './Dog'
 import Contact from './Contact'
 import About from './About'
-import { Routes, Route, NavLink } from 'react-router-dom';
+// import { Routes, Route, NavLink } from 'react-router-dom';
 import Food from './patterns/Food'
 import Meal from './patterns/Meal'
 import Error from './patterns/Error';
@@ -13,8 +13,7 @@ import Navbar from './exercise/Navbar'
 import whiskey from './imgs/whiskey.jpg'
 import tubby from './imgs/tubby.jpg'
 import hazel from './imgs/hazel.jpg'
-import DogList from './exercise/DogList';
-import DogDetails from './exercise/DogDetails';
+import Router from './exercise/Routes';
 
 /* Section 23: Router exercise */
 function App({ dogs }) {
@@ -23,12 +22,9 @@ function App({ dogs }) {
     <div className="App">
 
       <Navbar dogs={dogs} />
-
-      <Routes>
-        <Route exact path="/dogs" element={<DogList dogs={dogs} />} />
-        <Route exact path="/dogs/:name" element={<DogDetails dogs={dogs} />} />
-      </Routes>
-
+      <div className='container'>
+        <Router dogs={dogs} />
+      </div>
 
     </div>
   );
