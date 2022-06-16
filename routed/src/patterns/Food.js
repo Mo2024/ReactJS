@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navigate, useParams, Redirect } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import "./Food.css";
 
 function Food() {

@@ -8,48 +8,65 @@ import Food from './patterns/Food'
 import Meal from './patterns/Meal'
 import Error from './patterns/Error';
 import FoodSearch from './patterns/FoodSearch';
+import Navbar from './exercise/Navbar'
+// import { dogs } from './exercise/props'
+import whiskey from './imgs/whiskey.jpg'
+import tubby from './imgs/tubby.jpg'
+import hazel from './imgs/hazel.jpg'
+import DogList from './exercise/DogList';
+import DogDetails from './exercise/DogDetails';
 
-/* Section 20 Intro to routers */
-// function App() {
-//   return (
-//     <div className="App">
-//       <nav className='App-nav'>
-//         <NavLink className={({ isActive }) => (isActive ? "active-link" : '')} to='/dog'>Dog</NavLink>
-//         <NavLink className={({ isActive }) => (isActive ? "active-link" : '')} to='/contact'>Contact</NavLink>
-//         <NavLink className={({ isActive }) => (isActive ? "active-link" : '')} to='/'>About</NavLink>
-//       </nav>
+/* Section 23: Router exercise */
+function App({ dogs }) {
 
-//       <Routes>
-//         <Route exact path="/dog" element={<Dog name="Muffins" />} />
-//         <Route exact path="/contact" element={<Contact />} />
-//         <Route exact path="/" element={<About />} />
-//       </Routes>
-
-//     </div>
-//   );
-// }
-
-/* Section 22: Patters */
-function App() {
   return (
     <div className="App">
-      {/* <nav className='App-nav'>
-        <NavLink className={({ isActive }) => (isActive ? "active-link" : '')} to='/dog'>Dog</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? "active-link" : '')} to='/contact'>Contact</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? "active-link" : '')} to='/'>About</NavLink>
-      </nav> */}
+
+      <Navbar dogs={dogs} />
 
       <Routes>
-        <Route exact path="/" element={<FoodSearch />} />
-        <Route exact path="/food/:name" element={<Food />} />
-        <Route exact path="/meal/:foodName/drink/:drinkName" element={<Meal />} />
-
-        {/* Put error route in the end */}
-        <Route exact path='*' element={<Error />} />
+        <Route exact path="/dogs" element={<DogList dogs={dogs} />} />
+        <Route exact path="/dogs/:name" element={<DogDetails dogs={dogs} />} />
       </Routes>
+
 
     </div>
   );
+}
+
+App.defaultProps = {
+  dogs: [
+    {
+      name: "Whiskey",
+      age: 5,
+      src: whiskey,
+      facts: [
+        "Whiskey loves eating popcorn.",
+        "Whiskey is a terrible guard dog.",
+        "Whiskey wants to cuddle with you!"
+      ]
+    },
+    {
+      name: "Hazel",
+      age: 3,
+      src: hazel,
+      facts: [
+        "Hazel has soooo much energy!",
+        "Hazel is highly intelligent.",
+        "Hazel loves people more than dogs."
+      ]
+    },
+    {
+      name: "Tubby",
+      age: 4,
+      src: tubby,
+      facts: [
+        "Tubby is not the brightest dog",
+        "Tubby does not like walks or exercise.",
+        "Tubby loves eating food."
+      ]
+    }
+  ]
 }
 
 export default App;
